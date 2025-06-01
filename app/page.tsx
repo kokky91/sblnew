@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ShoppingCart, Check, Star, ChevronDown, Sparkles } from 'lucide-react';
+import { Check, Star, ChevronDown, Sparkles } from 'lucide-react';
 import ScrollButton from '@/components/ui/ScrollButton';
 
 export default function NothingStore() {
@@ -42,9 +42,9 @@ export default function NothingStore() {
             className="absolute top-40 right-0 w-96 h-96 rounded-full bg-gradient-to-tr from-gray-50 to-white border border-gray-100 shadow-sm"
             style={{
               transformStyle: 'preserve-3d',
-              perspective: '1000px',
+              perspective: '1000px'
             }}
-          >
+           >
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent to-white/40 opacity-50"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <Sparkles className="h-12 w-12 text-gray-200 opacity-50" />
@@ -98,7 +98,7 @@ export default function NothingStore() {
                   </div>
                   <h3 className="text-xl font-medium mb-2">Instant Delivery</h3>
                   <p className="text-gray-600 font-light">
-                    Nothing arrives faster than our nothing — it's already there
+                    Nothing arrives faster than our nothing — its already there
                     before you order it.
                   </p>
                 </CardContent>
@@ -125,10 +125,10 @@ export default function NothingStore() {
                       />
                     ))}
                   </div>
-                  <p className="text-gray-600 italic mb-6">
-                    "I've never experienced nothing like this before. It's
-                    changed my perspective on emptiness."
-                  </p>
+                 <p className="text-gray-600 italic mb-6">
+                    &quot;I&apos;ve never experienced anything like this before.
+                   It&apos;s changed my perspective on emptiness.&quot;
+                 </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
                     <div>
@@ -151,10 +151,10 @@ export default function NothingStore() {
                       />
                     ))}
                   </div>
-                  <p className="text-gray-600 italic mb-6">
-                    "I purchased nothing and received exactly what I expected.
-                    Perfection in its purest form."
-                  </p>
+                   <p className="text-gray-600 italic mb-6">
+                    &quot;I purchased nothing and received exactly what I expected.
+                   Perfection in its purest form.&quot;
+                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
                     <div>

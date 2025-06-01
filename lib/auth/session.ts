@@ -1,4 +1,4 @@
-import { SignJWT, jwtVerify } from 'jose';
+import { jwtVerify } from 'jose';
 
 type SessionData = {
   user: { id: string };
