@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]   # pas aan aan je flow
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # ➜ PNPM klaarzetten (kan ook npm/yarn)
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - run: pnpm install --frozen-lockfile
+
+      # 1. Lint + typecheck
+      - run: pnpm lint
+
+      # 2. Tests (skip als je nog geen tests hebt)
+      - run: pnpm test --if-present
+
+      # 3. Build (doet vrijwel hetzelfde als Vercel)
+      - run: pnpm build
