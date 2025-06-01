@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main, develop]   # pas aan naar jouw flow
+    branches: [main, develop]      # pas aan naar wens
   pull_request:
 
 jobs:
@@ -10,29 +10,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 0. Repo klonen
+      # 0️⃣ Repo klonen
       - uses: actions/checkout@v4
 
-      # 1. PNPM installeren (moet vóór setup-node omdat we de pnpm-cache gebruiken)
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: false      # we installeren zelf straks
-
-      # 2. Node installeren en pnpm-cache activeren
+      # 1️⃣ Node installeren
       - uses: actions/setup-node@v3
         with:
-          node-version: 18        # zelfde major als lokaal
-          cache: pnpm             # werkt nu omdat pnpm al is geïnstalleerd
+          node-version: 18         # dezelfde major als lokaal
 
-      # 3. Dependencies
+      # 2️⃣ PNPM installeren
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 18
+
+      # 3️⃣ Dependencies
       - run: pnpm install --frozen-lockfile
 
-      # 4. Lint + type-check
+      # 4️⃣ Lint + type-check
       - run: pnpm lint
 
-      # 5. Tests (wordt overgeslagen als je nog geen tests hebt)
+      # 5️⃣ Tests (wordt overgeslagen als je er geen hebt)
       - run: pnpm test --if-present
 
-      # 6. Build (vergelijkbaar met Vercel)
+      # 6️⃣ Build
       - run: pnpm build
